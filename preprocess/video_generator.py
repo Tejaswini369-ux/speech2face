@@ -9,13 +9,18 @@ import face_recognition
 import numpy as np
 import skimage
 import scipy
-from tensorflow.keras.engine import  Model
+import sys
+from tensorflow.keras import utils as tf_keras_utils
+sys.modules['keras.utils'] = tf_keras_utils 
 from tensorflow.keras.layers import Input
-from keras_vggface.vggface import VGGFace
+from tensorflow.keras.models import Model
+from keras_vggface.vggface import VGGFace 
 from keras_vggface import utils
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 FNULL = open(os.devnull, 'w')
+
+
 
 class VideoExtract():
 
